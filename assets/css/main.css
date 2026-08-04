@@ -1173,7 +1173,9 @@ input, select, textarea {
 			-moz-filter: blur(0.2rem);
 			-webkit-filter: blur(0.2rem);
 			-ms-filter: blur(0.2rem);
-			filter: none;
+			filter: brightness(.68) saturate(.82) contrast(1.03);
+
+    opacity: .88;
 		}
 
 		body.is-preload #bg:before {
