@@ -1771,5 +1771,5 @@ input, select, textarea {
 }
 /* mover logo un poco hacia abajo */
 #header .logo {
-    transform: translateY(20px) !important;
+    transform: translateY(60px) !important;
 }
