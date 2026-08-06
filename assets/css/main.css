@@ -1677,7 +1677,7 @@ input, select, textarea {
     line-height:1.7;
 }
 .logo img {
-    width: 180px;
+    width: 220px;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -1689,7 +1689,7 @@ input, select, textarea {
     width: auto;
     height: auto;
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 /* centrar logo */
