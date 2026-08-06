@@ -1711,3 +1711,18 @@ input, select, textarea {
 #header nav {
     margin-top: 1rem;
 }
+/* liberar el contenedor del logo */
+#header .logo {
+    width: auto !important;
+    height: auto !important;
+    border: none;
+    transform: none;
+}
+
+/* ahora sí agrandar la imagen */
+#header .logo img {
+    width: 180px !important; /* probá 150, 180, 220 */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
