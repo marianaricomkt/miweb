@@ -1769,3 +1769,7 @@ input, select, textarea {
     height: auto !important;
     display: inline-block !important;
 }
+/* mover logo un poco hacia abajo */
+#header .logo {
+    transform: translateY(20px) !important;
+}
