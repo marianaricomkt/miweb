@@ -1754,3 +1754,18 @@ input, select, textarea {
     display: block;
     margin: 0 auto;
 }
+/* 💣 matar TODO lo viejo del logo */
+#header .logo {
+    all: unset !important;
+    display: block !important;
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* 💥 forzar tamaño real */
+#header .logo img {
+    width: 300px !important;
+    max-width: 80% !important;
+    height: auto !important;
+    display: inline-block !important;
+}
