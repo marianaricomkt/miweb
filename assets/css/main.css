@@ -1682,3 +1682,32 @@ input, select, textarea {
     display: block;
     margin: 0 auto;
 }
+/* FIX LOGO (saca el diamante roto) */
+#header .logo {
+    border: none;
+    transform: none;
+    width: auto;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* centrar logo */
+#header .logo img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* arregla espacio raro */
+#header .content {
+    margin-top: 0;
+}
+#header {
+    padding-top: 2rem;
+}
+
+#header nav {
+    margin-top: 1rem;
+}
