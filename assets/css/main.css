@@ -1730,3 +1730,27 @@ input, select, textarea {
     display: block;
     margin: 0 auto;
 }
+/* 💣 eliminar completamente el diamante */
+#header .logo:before,
+#header .logo:after {
+    display: none !important;
+}
+
+/* reset total del contenedor */
+#header .logo {
+    width: auto !important;
+    height: auto !important;
+    border: none !important;
+    transform: none !important;
+    padding: 0 !important;
+    margin: 0 auto 1.5rem auto !important;
+}
+
+/* ahora sí: logo grande */
+#header .logo img {
+    width: 260px !important;
+    max-width: 90vw;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
