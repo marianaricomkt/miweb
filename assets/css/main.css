@@ -1681,3 +1681,39 @@ input, select, textarea {
     height: 0;
     margin: 0;
 }
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* BOTÓN */
+.skill {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 12px;
+    border-radius: 12px;
+    width: 110px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* ICONO */
+.skill img {
+    width: 40px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+/* TEXTO */
+.skill span {
+    font-size: 0.85rem;
+    display: block;
+}
+
+/* HOVER */
+.skill:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-5px);
+}
