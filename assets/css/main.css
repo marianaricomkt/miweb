@@ -1765,17 +1765,30 @@ h3 {
     display: block;
     clear: both;
 }
-/* SOLO para iconos */
+/* ===== VERSION SEGURA ICONOS ===== */
+
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 20px;
-    justify-items: center;
-    margin-bottom: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
+.skill {
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.2s ease;
+}
+
+/* tamaño controlado */
 .skill img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
+    width: 35px;
+    height: 35px;
+}
+
+/* hover MUY SUAVE (no rompe layout) */
+.skill:hover {
+    background: rgba(255,255,255,0.1);
 }
