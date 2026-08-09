@@ -1744,3 +1744,24 @@ h3 {
     display: block;
     clear: both;
 }
+/* ===== FIX DEFINITIVO ESPACIADO SOBRE COMPETENCIAS ===== */
+
+/* separa BIEN el bloque de iconos */
+.skills-grid {
+    margin-bottom: 5rem !important;
+}
+
+/* fuerza a que el título baje sí o sí */
+#about h3 {
+    margin-top: 3rem !important;
+    clear: both !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+/* evita que los iconos invadan el texto */
+.skills-grid::after {
+    content: "";
+    display: block;
+    clear: both;
+}
