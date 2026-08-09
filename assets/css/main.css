@@ -1723,7 +1723,10 @@ h3 {
 .skills-grid {
     margin-bottom: 30px;
 }
+.skills-grid {
+    margin-bottom: 3rem;
+}
 
-.competencias {
-    margin-top: 120px;
+#about h3 {
+    margin-top: 1.5rem;
 }
