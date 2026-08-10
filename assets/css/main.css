@@ -1844,3 +1844,16 @@ h3 {
 #about ul li:hover::before {
     transform: scale(1.2);
 }
+.servicio img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    filter: brightness(0) invert(1); /* los hace blancos */
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.servicio:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
