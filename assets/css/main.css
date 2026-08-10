@@ -2355,3 +2355,12 @@ h3 {
     font-size: 20px;
     opacity: 0.8;
 }
+.competencias-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+}
+
+.competencia-card {
+    display: flex !important;
+}
