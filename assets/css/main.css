@@ -2052,3 +2052,11 @@ h3 {
 	#proyectos.proyectos-agencia .proyecto-card p {
     margin-bottom: 12px;
 }
+#proyectos.proyectos-agencia .proyecto-card {
+    transition: all 0.3s ease;
+}
+
+#proyectos.proyectos-agencia .proyecto-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
