@@ -2364,3 +2364,12 @@ h3 {
 .competencia-card {
     display: flex !important;
 }
+section .competencias-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+}
+
+section .competencia-card {
+    width: 100% !important;
+}
