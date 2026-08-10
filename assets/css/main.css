@@ -2060,3 +2060,6 @@ h3 {
     transform: translateY(-6px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
+#proyectos.proyectos-agencia .proyecto-card:hover {
+    background: rgba(30, 30, 45, 0.95);
+}
