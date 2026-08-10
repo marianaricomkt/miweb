@@ -1944,8 +1944,17 @@ h3 {
 .feature {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     font-size: 0.9rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.04);
+    transition: 0.3s;
+}
+
+.feature:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateX(4px);
 }
 
 .resultado {
@@ -1954,4 +1963,45 @@ h3 {
     opacity: 0.9;
     border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 10px;
+}
+.proyecto-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.proyecto-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.proyecto-card:hover::before {
+    opacity: 1;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-6px) scale(1.01);
+}
+.proyecto-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+.proyecto-card img {
+    transition: 0.4s;
+}
+
+.proyecto-card:hover img {
+    transform: scale(1.05);
+    opacity: 0.9;
+}	
 }
