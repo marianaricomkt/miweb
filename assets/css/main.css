@@ -2021,3 +2021,11 @@ h3 {
     max-width: 800px;
     margin: auto;
 }
+#proyectos.proyectos-agencia .proyecto-card {
+    background: rgba(20, 20, 30, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 14px !important;
+    padding: 30px !important;
+    max-width: 800px !important;
+    margin: auto !important;
+}
