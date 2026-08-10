@@ -2373,3 +2373,8 @@ section .competencias-grid {
 section .competencia-card {
     width: 100% !important;
 }
+#about .competencias-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+}
