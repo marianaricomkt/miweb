@@ -2032,3 +2032,23 @@ h3 {
 #proyectos.proyectos-agencia .proyecto-card {
     margin-left: 0;
 }
+#proyectos.proyectos-agencia h3 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+#proyectos.proyectos-agencia p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.85;
+	#proyectos.proyectos-agencia strong {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+    opacity: 0.6;
+}
+	#proyectos.proyectos-agencia .proyecto-card p {
+    margin-bottom: 12px;
+}
