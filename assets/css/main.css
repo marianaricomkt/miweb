@@ -2005,3 +2005,11 @@ h3 {
     opacity: 0.9;
 }	
 }
+.tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    margin-bottom: 8px;
+}
