@@ -2070,4 +2070,24 @@ h3 {
 /* ==========================================
    AURA STUDIO — COMPETENCIAS
 ========================================== */
+.competencias-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
 
+.competencia-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #111;
+    color: #fff;
+}
+
+.competencia-icon {
+    font-size: 20px;
+    margin-top: 5px;
+}
