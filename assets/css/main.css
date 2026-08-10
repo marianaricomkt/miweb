@@ -1996,6 +1996,7 @@ h3 {
         opacity: 1;
         transform: translateY(0);
     }
+	 }
 .proyecto-card img {
     transition: 0.4s;
 }
@@ -2004,7 +2005,6 @@ h3 {
     transform: scale(1.05);
     opacity: 0.9;
 }	
-}
 .tag {
     display: inline-block;
     font-size: 0.7rem;
@@ -2041,6 +2041,8 @@ h3 {
     font-size: 0.9rem;
     line-height: 1.5;
     opacity: 0.85;
+}
+	
 	#proyectos.proyectos-agencia strong {
     display: block;
     font-size: 0.75rem;
