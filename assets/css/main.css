@@ -1175,7 +1175,7 @@ input, select, textarea {
 			-ms-filter: blur(0.2rem);
 			filter: brightness(.68) saturate(.82) contrast(1.03);
 
-    opacity: .88;
+    opacity: 0.3;
 		}
 
 		body.is-preload #bg:before {
