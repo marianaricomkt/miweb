@@ -2327,3 +2327,31 @@ h3 {
     }
 
 }
+.competencias-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+	@media (max-width: 768px) {
+    .competencias-grid {
+        grid-template-columns: 1fr;
+    }
+}
+	.competencia-card {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+	.competencia-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.06);
+}
+	.competencia-icon {
+    font-size: 20px;
+    opacity: 0.8;
+}
