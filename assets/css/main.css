@@ -1934,27 +1934,27 @@ h3 {
     opacity: 0.85;
 }
 
-.features {
-    display: grid;
-    grid-template-columns: 1fr;
+#proyectos.proyectos-agencia .features {
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
-    margin: 15px 0;
+    margin-top: 15px;
 }
 
-.feature {
-    display: flex;
+#proyectos.proyectos-agencia .feature {
+    background: rgba(255,255,255,0.08);
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.9rem;
-    padding: 6px 10px;
-    border-radius: 6px;
-    background: rgba(255,255,255,0.04);
+    gap: 6px;
     transition: 0.3s;
 }
 
-.feature:hover {
-    background: rgba(255,255,255,0.08);
-    transform: translateX(4px);
+#proyectos.proyectos-agencia .feature:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
 }
 
 .resultado {
