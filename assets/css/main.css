@@ -2018,8 +2018,8 @@ h3 {
     backdrop-filter: blur(10px);
     border-radius: 14px;
     padding: 30px;
-    max-width: 800px;
-    margin: auto;
+    max-width: 1000px;
+    margin: 0;
 }
 #proyectos.proyectos-agencia .proyecto-card {
     background: rgba(20, 20, 30, 0.95) !important;
@@ -2028,4 +2028,7 @@ h3 {
     padding: 30px !important;
     max-width: 800px !important;
     margin: auto !important;
+}
+#proyectos.proyectos-agencia .proyecto-card {
+    margin-left: 0;
 }
