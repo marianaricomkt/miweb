@@ -1852,3 +1852,7 @@ h3 {
     opacity: 0.85;
     transition: all 0.3s ease;
 }
+.servicio p {
+    font-size: 0.9rem;
+    margin: 0;
+}
