@@ -1908,3 +1908,32 @@ h3 {
 .proyecto-grid h4 {
     margin-bottom: 10px;
 }
+.proyecto-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    background: rgba(255,255,255,0.06);
+    transform: translateY(-3px);
+}
+
+.card h4 {
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+}
