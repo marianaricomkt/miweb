@@ -1890,3 +1890,21 @@ h3 {
     height: 28px !important;
     object-fit: contain;
 }
+.proyecto {
+    margin-top: 20px;
+}
+
+.descripcion {
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.proyecto-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.proyecto-grid h4 {
+    margin-bottom: 10px;
+}
