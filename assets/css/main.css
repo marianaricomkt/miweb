@@ -2067,3 +2067,150 @@ h3 {
     transform: translateY(-6px) !important;
     box-shadow: 0 20px 40px rgba(0,0,0,0.4) !important;
 }
+/* ==========================================
+   AURA STUDIO — COMPETENCIAS
+========================================== */
+
+.competencias-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.competencia-card {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    padding: 18px;
+
+    min-height: 105px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Línea de luz superior */
+
+.competencia-card::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #c7a17a,
+        transparent
+    );
+
+    transition: left 0.6s ease;
+}
+
+
+/* Hover */
+
+.competencia-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(199, 161, 122, 0.38);
+
+    background: rgba(255, 255, 255, 0.07);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.competencia-card:hover::before {
+    left: 100%;
+}
+
+
+/* Iconos */
+
+.competencia-icon {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 10px;
+
+    background: rgba(199, 161, 122, 0.10);
+
+    border: 1px solid rgba(199, 161, 122, 0.18);
+
+    color: #c7a17a;
+
+    font-size: 1.1rem;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.competencia-card:hover .competencia-icon {
+    transform: scale(1.08);
+
+    background: rgba(199, 161, 122, 0.18);
+}
+
+
+/* Títulos */
+
+.competencia-card h4 {
+    margin: 0 0 6px 0;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.03em;
+}
+
+
+/* Descripción */
+
+.competencia-card p {
+    margin: 0;
+
+    font-size: 0.78rem;
+
+    line-height: 1.55;
+
+    opacity: 0.68;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 736px) {
+
+    .competencias-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
