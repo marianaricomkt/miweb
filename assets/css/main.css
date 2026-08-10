@@ -2378,3 +2378,13 @@ section .competencia-card {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 20px !important;
 }
+#about .competencias-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+}
+
+#about .competencia-card {
+    width: auto !important;
+    display: block !important;
+}
