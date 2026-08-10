@@ -1885,3 +1885,8 @@ h3 {
 .servicio:hover {
     background: rgba(255,255,255,0.05);
 }
+.servicio img {
+    width: 28px !important;
+    height: 28px !important;
+    object-fit: contain;
+}
