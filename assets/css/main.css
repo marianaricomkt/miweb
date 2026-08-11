@@ -2383,11 +2383,23 @@ h3 {
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 12px;
 
+    opacity: 0;
+    transform: translateY(18px);
+
     transition:
-        transform 0.3s ease,
+        opacity 0.6s ease,
+        transform 0.6s ease,
         background 0.3s ease,
         border-color 0.3s ease,
         box-shadow 0.3s ease;
+}
+.metricas-demo.animada .metrica-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.metricas-demo.animada .metrica-card:hover {
+    transform: translateY(-4px);
 }
 
 .metrica-card:hover {
@@ -2462,12 +2474,14 @@ h3 {
         #00c7b7
     );
 
-    transform: scaleX(1);
+    transform: scaleX(0);
     transform-origin: left;
 
     transition: transform 1.2s ease;
 }
-
+.metricas-demo.animada .metrica-barra span {
+    transform: scaleX(1);
+}
 .metrica-card small {
     display: block;
 
