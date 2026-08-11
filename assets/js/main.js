@@ -397,5 +397,33 @@
 					$window.on('load', function() {
 						$main._show(location.hash.substr(1), true);
 					});
+// ==========================================
+// AURA STUDIO — ANIMACIÓN DE MÉTRICAS
+// ==========================================
 
+var metricasDemo = document.querySelector('.metricas-demo');
+
+if (metricasDemo) {
+
+    var metricasObserver = new IntersectionObserver(function(entries) {
+
+        entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+
+                metricasDemo.classList.add('animada');
+
+                metricasObserver.unobserve(metricasDemo);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.25
+    });
+
+    metricasObserver.observe(metricasDemo);
+
+}
 })(jQuery);
