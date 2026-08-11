@@ -2235,3 +2235,56 @@ h3 {
     font-size: 1.4rem;
     font-weight: 700;
 }
+.analytics-icon {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(249, 171, 0, 0.12);
+    color: #f9ab00;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.seo-icon {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(0, 184, 148, 0.12);
+    color: #00b894;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.automation-icon {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(167, 123, 255, 0.12);
+    color: #a77bff;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+}
