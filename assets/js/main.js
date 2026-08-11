@@ -478,8 +478,8 @@ if (metricasDemo) {
             if (valor) {
 
                 setTimeout(function() {
-                    animarNumero(valor, 1200);
-                }, index * 120);
+                    animarNumero(valor, 1500);
+                }, index * 80);
 
             }
 
