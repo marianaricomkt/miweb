@@ -2344,12 +2344,31 @@ h3 {
 
 .metricas-label {
     display: inline-block;
-
     margin-bottom: 0.6rem;
 
     font-size: 0.7rem;
-    font
-/* MÉTRICAS — TARJETAS */
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    color: #00c7b7;
+}
+
+.metricas-header h3 {
+    margin-bottom: 0.7rem;
+}
+
+.metricas-header p {
+    margin-bottom: 0.7rem;
+}
+
+.metricas-header small {
+    font-size: 0.7rem;
+    opacity: 0.45;
+}
+
+
+/* TARJETAS */
 
 .metricas-grid {
     display: grid;
@@ -2359,10 +2378,10 @@ h3 {
 
 .metrica-card {
     padding: 18px;
-    border-radius: 12px;
 
     background: rgba(255, 255, 255, 0.045);
     border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
 
     transition:
         transform 0.3s ease,
@@ -2373,10 +2392,15 @@ h3 {
 
 .metrica-card:hover {
     transform: translateY(-4px);
+
     background: rgba(255, 255, 255, 0.075);
     border-color: rgba(255, 255, 255, 0.25);
+
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
 }
+
+
+/* INFORMACIÓN */
 
 .metrica-nombre {
     display: block;
@@ -2393,9 +2417,10 @@ h3 {
 .metrica-valor {
     display: inline-block;
 
+    margin: 0 8px 0 0;
+
     font-size: 1.8rem;
     line-height: 1;
-    margin-right: 8px;
 }
 
 .metrica-tendencia {
@@ -2407,6 +2432,9 @@ h3 {
     color: #00c7b7;
 }
 
+
+/* BARRA */
+
 .metrica-barra {
     width: 100%;
     height: 5px;
@@ -2415,8 +2443,8 @@ h3 {
     margin-bottom: 10px;
 
     overflow: hidden;
-    border-radius: 10px;
 
+    border-radius: 10px;
     background: rgba(255, 255, 255, 0.08);
 }
 
@@ -2434,7 +2462,7 @@ h3 {
         #00c7b7
     );
 
-    transform: scaleX(0);
+    transform: scaleX(1);
     transform-origin: left;
 
     transition: transform 1.2s ease;
@@ -2446,7 +2474,11 @@ h3 {
     font-size: 0.72rem;
     opacity: 0.5;
 }
-	/* MÉTRICAS — MOBILE */
+
+
+/* ==========================================
+   MÉTRICAS — MOBILE
+========================================== */
 
 @media screen and (max-width: 736px) {
 
@@ -2462,4 +2494,5 @@ h3 {
     .metrica-card {
         padding: 16px;
     }
+
 }
