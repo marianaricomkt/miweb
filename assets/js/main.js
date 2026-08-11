@@ -405,13 +405,96 @@ var metricasDemo = document.querySelector('.metricas-demo');
 
 if (metricasDemo) {
 
+    var metricasCards = metricasDemo.querySelectorAll('.metrica-card');
+
+    var animarNumero = function(elemento, duracion) {
+
+        var textoFinal = elemento.textContent.trim();
+
+        var numeroMatch = textoFinal
+            .replace(',', '.')
+            .match(/[0-9]+(?:\.[0-9]+)?/);
+
+        if (!numeroMatch)
+            return;
+
+        var numeroFinal = parseFloat(numeroMatch[0]);
+
+        var tienePorcentaje = textoFinal.includes('%');
+        var tieneX = textoFinal.includes('x');
+        var tieneMas = textoFinal.charAt(0) === '+';
+
+        var inicio = null;
+
+        var actualizar = function(timestamp) {
+
+            if (!inicio)
+                inicio = timestamp;
+
+            var progreso = Math.min(
+                (timestamp - inicio) / duracion,
+                1
+            );
+
+            // Movimiento suave: acelera y desacelera al final.
+            var suavizado = 1 - Math.pow(1 - progreso, 3);
+
+            var valorActual = numeroFinal * suavizado;
+
+            var decimales = numeroFinal % 1 !== 0 ? 1 : 0;
+
+            var valorFormateado = valorActual
+                .toFixed(decimales)
+                .replace('.', ',');
+
+            elemento.textContent =
+                (tieneMas ? '+' : '') +
+                valorFormateado +
+                (tienePorcentaje ? '%' : '') +
+                (tieneX ? 'x' : '');
+
+            if (progreso < 1) {
+                window.requestAnimationFrame(actualizar);
+            }
+
+        };
+
+        window.requestAnimationFrame(actualizar);
+
+    };
+
+
+    var iniciarMetricas = function() {
+
+        if (metricasDemo.classList.contains('animada'))
+            return;
+
+        metricasDemo.classList.add('animada');
+
+        metricasCards.forEach(function(card, index) {
+
+            var valor = card.querySelector('.metrica-valor');
+
+            if (valor) {
+
+                setTimeout(function() {
+                    animarNumero(valor, 1200);
+                }, index * 120);
+
+            }
+
+        });
+
+    };
+
+
     var metricasObserver = new IntersectionObserver(function(entries) {
 
         entries.forEach(function(entry) {
 
             if (entry.isIntersecting) {
 
-                metricasDemo.classList.add('animada');
+                iniciarMetricas();
 
                 metricasObserver.unobserve(metricasDemo);
 
@@ -422,6 +505,7 @@ if (metricasDemo) {
     }, {
         threshold: 0.25
     });
+
 
     metricasObserver.observe(metricasDemo);
 
