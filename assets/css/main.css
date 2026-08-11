@@ -2304,3 +2304,9 @@ h3 {
     font-size: 1.4rem;
     font-weight: 700;
 }
+.competencia-card:hover {
+    transform: translateY(-6px) !important;
+    background: rgba(45, 45, 52, 0.95) !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.40) !important;
+}
