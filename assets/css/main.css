@@ -2090,8 +2090,41 @@ h3 {
 }
 
 .competencia-icon {
-    font-size: 20px;
-    margin-top: 5px;
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+}
+
+.competencia-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.paid-icon {
+    color: #4285f4;
+    background: rgba(66, 133, 244, 0.12);
+}
+
+.analytics-icon {
+    color: #f9ab00;
+    background: rgba(249, 171, 0, 0.12);
+}
+
+.seo-icon {
+    color: #00a878;
+    background: rgba(0, 168, 120, 0.12);
+}
+
+.automation-icon {
+    color: #a77bff;
+    background: rgba(167, 123, 255, 0.12);
+}
 }
 .competencia-card {
     background: rgba(255, 255, 255, 0.045);
