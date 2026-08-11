@@ -2349,3 +2349,117 @@ h3 {
 
     font-size: 0.7rem;
     font
+/* MÉTRICAS — TARJETAS */
+
+.metricas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.metrica-card {
+    padding: 18px;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.metrica-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.075);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.metrica-nombre {
+    display: block;
+    margin-bottom: 8px;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    opacity: 0.6;
+}
+
+.metrica-valor {
+    display: inline-block;
+
+    font-size: 1.8rem;
+    line-height: 1;
+    margin-right: 8px;
+}
+
+.metrica-tendencia {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.metrica-tendencia.positiva {
+    color: #00c7b7;
+}
+
+.metrica-barra {
+    width: 100%;
+    height: 5px;
+
+    margin-top: 18px;
+    margin-bottom: 10px;
+
+    overflow: hidden;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.metrica-barra span {
+    display: block;
+
+    width: var(--progreso);
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: linear-gradient(
+        90deg,
+        #4285f4,
+        #00c7b7
+    );
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 1.2s ease;
+}
+
+.metrica-card small {
+    display: block;
+
+    font-size: 0.72rem;
+    opacity: 0.5;
+}
+	/* MÉTRICAS — MOBILE */
+
+@media screen and (max-width: 736px) {
+
+    .metricas-demo {
+        padding: 1.4rem;
+    }
+
+    .metricas-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .metrica-card {
+        padding: 16px;
+    }
+}
