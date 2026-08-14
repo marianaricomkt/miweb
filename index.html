@@ -430,17 +430,38 @@
         Charlemos.
     </p>
 
-    <ul class="icons">
+    <form id="contact-form" class="contact-form" action="https://formsubmit.co/ajax/marianarico.marketing@gmail.com" method="POST">
 
-<li>
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=marianarico.marketing%40gmail.com"
-       class="icon solid fa-envelope"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Enviar email">
-        <span class="label">Email</span>
-    </a>
-</li>
+    <input type="hidden" name="_subject" value="Nueva consulta desde Aura Studio">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+
+    <div class="fields">
+        <div class="field half">
+            <label for="contact-name">Nombre</label>
+            <input type="text" name="name" id="contact-name" autocomplete="name" required>
+        </div>
+
+        <div class="field half">
+            <label for="contact-email">Email</label>
+            <input type="email" name="email" id="contact-email" autocomplete="email" required>
+        </div>
+
+        <div class="field">
+            <label for="contact-message">Mensaje</label>
+            <textarea name="message" id="contact-message" rows="5" required></textarea>
+        </div>
+    </div>
+
+    <ul class="actions">
+        <li><button type="submit" class="primary">Enviar consulta</button></li>
+    </ul>
+
+    <p id="contact-form-status" class="contact-form-status" role="status" aria-live="polite"></p>
+</form>
+
+<ul class="icons">
 
     <li>
         <a href="https://www.linkedin.com/in/mariana-rico1/"
@@ -467,6 +488,7 @@
 <script src="assets/js/browser.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
+<script src="assets/js/contact-form.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
