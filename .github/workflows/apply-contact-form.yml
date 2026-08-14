@@ -1,0 +1,110 @@
+name: Apply contact form
+
+on:
+  push:
+    branches:
+      - feature/contact-form
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update contact form
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+
+          old = '''<ul class="icons">\n\n<li>\n    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=marianarico.marketing%40gmail.com"\n       class="icon solid fa-envelope"\n       target="_blank"\n       rel="noopener noreferrer"\n       aria-label="Enviar email">\n        <span class="label">Email</span>\n    </a>\n</li>\n\n    <li>'''
+
+          new = '''<form id="contact-form" class="contact-form" action="https://formsubmit.co/ajax/marianarico.marketing@gmail.com" method="POST">\n\n    <input type="hidden" name="_subject" value="Nueva consulta desde Aura Studio">\n    <input type="hidden" name="_template" value="table">\n    <input type="hidden" name="_captcha" value="false">\n    <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">\n\n    <div class="fields">\n        <div class="field half">\n            <label for="contact-name">Nombre</label>\n            <input type="text" name="name" id="contact-name" autocomplete="name" required>\n        </div>\n\n        <div class="field half">\n            <label for="contact-email">Email</label>\n            <input type="email" name="email" id="contact-email" autocomplete="email" required>\n        </div>\n\n        <div class="field">\n            <label for="contact-message">Mensaje</label>\n            <textarea name="message" id="contact-message" rows="5" required></textarea>\n        </div>\n    </div>\n\n    <ul class="actions">\n        <li><button type="submit" class="primary">Enviar consulta</button></li>\n    </ul>\n\n    <p id="contact-form-status" class="contact-form-status" role="status" aria-live="polite"></p>\n</form>\n\n<ul class="icons">\n\n    <li>'''
+
+          if old not in html:
+              raise SystemExit('No se encontró el bloque de contacto esperado; no se modificó index.html.')
+
+          html = html.replace(old, new, 1)
+          marker = '<script src="assets/js/main.js"></script>'
+          script = '<script src="assets/js/contact-form.js"></script>\n'
+          if 'assets/js/contact-form.js' not in html:
+              html = html.replace(marker, script + marker, 1)
+
+          path.write_text(html, encoding='utf-8')
+          PY
+
+      - name: Add contact form script
+        run: |
+          cat > assets/js/contact-form.js <<'EOF'
+          (function () {
+              'use strict';
+
+              var form = document.getElementById('contact-form');
+              var status = document.getElementById('contact-form-status');
+
+              if (!form || !status) return;
+
+              form.addEventListener('submit', function (event) {
+                  event.preventDefault();
+
+                  var submitButton = form.querySelector('button[type="submit"]');
+                  var formData = new FormData(form);
+
+                  if (formData.get('_honey')) return;
+
+                  status.textContent = 'Enviando...';
+                  if (submitButton) {
+                      submitButton.disabled = true;
+                      submitButton.textContent = 'Enviando...';
+                  }
+
+                  fetch(form.action, {
+                      method: 'POST',
+                      headers: {
+                          'Accept': 'application/json'
+                      },
+                      body: formData
+                  })
+                      .then(function (response) {
+                          if (!response.ok) throw new Error('No se pudo enviar el formulario.');
+                          return response.json();
+                      })
+                      .then(function (data) {
+                          if (!data.success) throw new Error(data.message || 'No se pudo enviar el formulario.');
+
+                          form.reset();
+                          status.textContent = '✓ Gracias por tu mensaje. Recibí tu consulta y te voy a contactar pronto.';
+                          status.classList.add('success');
+                      })
+                      .catch(function () {
+                          status.textContent = 'No pudimos enviar tu mensaje. Por favor, intentá nuevamente en unos minutos.';
+                          status.classList.remove('success');
+                      })
+                      .finally(function () {
+                          if (submitButton) {
+                              submitButton.disabled = false;
+                              submitButton.textContent = 'Enviar consulta';
+                          }
+                      });
+              });
+          })();
+          EOF
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets/js/contact-form.js
+          git diff --cached --quiet || git commit -m "feat: add contact form"
+          git push
+
+      - name: Remove temporary workflow
+        run: |
+          git rm .github/workflows/apply-contact-form.yml
+          git commit -m "chore: remove temporary contact form workflow"
+          git push
